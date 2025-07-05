@@ -14,7 +14,7 @@ function AdminCompanies() {
     }
 
     axios
-      .get("http://placement-backend-production.up.railway.app/api/admin/companies", {
+      .get("https://placement-backend-production.up.railway.app/api/admin/companies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setCompanies(res.data))

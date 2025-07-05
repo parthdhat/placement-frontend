@@ -15,7 +15,7 @@ function AdminLogin() {
     setError("");
 
     try {
-      const response = await axios.post("http://placement-backend-production.up.railway.app/api/admin/login", {
+      const response = await axios.post("https://placement-backend-production.up.railway.app/api/admin/login", {
         username,
         password,
       });

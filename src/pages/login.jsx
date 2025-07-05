@@ -15,7 +15,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await axios.post("http://placement-backend-production.up.railway.app/api/students/login", {
+      const response = await axios.post("https://placement-backend-production.up.railway.app/api/students/login", {
         email,
         password,
       });

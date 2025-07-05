@@ -25,7 +25,7 @@ function Register() {
     setError("");
 
     try {
-      await axios.post("http://placement-backend-production.up.railway.app/api/students/register", form);
+      await axios.post("https://placement-backend-production.up.railway.app/api/students/register", form);
       alert("Registration successful! Please login.");
       navigate("/login"); // ✅ Redirect to login page
     } catch (err) {

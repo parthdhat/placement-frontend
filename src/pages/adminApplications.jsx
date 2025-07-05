@@ -15,7 +15,7 @@ function AdminApplications() {
     }
 
     axios
-      .get("http://placement-backend-production.up.railway.app/api/admin/applications", {
+      .get("https://placement-backend-production.up.railway.app/api/admin/applications", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setApplications(res.data))
@@ -30,7 +30,7 @@ function AdminApplications() {
 
     axios
       .put(
-        `http://placement-backend-production.up.railway.app/api/admin/applications/${applicationId}`,
+        `https://placement-backend-production.up.railway.app/api/admin/applications/${applicationId}`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       )

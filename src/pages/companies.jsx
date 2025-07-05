@@ -16,10 +16,10 @@ function Companies() {
     }
 
     Promise.all([
-      axios.get("http://placement-backend-production.up.railway.app/api/companies", {
+      axios.get("https://placement-backend-production.up.railway.app/api/companies", {
         headers: { Authorization: `Bearer ${token}` },
       }),
-      axios.get("http://placement-backend-production.up.railway.app/api/applications/my", {
+      axios.get("https://placement-backend-production.up.railway.app/api/applications/my", {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ])
@@ -37,7 +37,7 @@ function Companies() {
     const token = localStorage.getItem("token");
     axios
       .post(
-        "http://placement-backend-production.up.railway.app/api/applications/apply",
+        "https://placement-backend-production.up.railway.app/api/applications/apply",
         { company_id },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -15,7 +15,7 @@ function MyApplications() {
     }
 
     axios
-      .get("http://placement-backend-production.up.railway.app/api/applications/my", {
+      .get("https://placement-backend-production.up.railway.app/api/applications/my", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

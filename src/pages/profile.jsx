@@ -21,7 +21,7 @@ function Profile() {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          "http://placement-backend-production.up.railway.app/api/students/profile",
+          "https://placement-backend-production.up.railway.app/api/students/profile",
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setStudent(response.data);
@@ -45,7 +45,7 @@ function Profile() {
     try {
       const token = localStorage.getItem("token");
       await axios.put(
-        "http://placement-backend-production.up.railway.app/api/students/profile",
+        "https://placement-backend-production.up.railway.app/api/students/profile",
         { resume_link: resumeLink, cgpa },
         { headers: { Authorization: `Bearer ${token}` } }
       );

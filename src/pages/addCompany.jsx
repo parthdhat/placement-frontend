@@ -26,7 +26,7 @@ function AddCompany() {
 
     try {
       const token = localStorage.getItem("adminToken");
-      await axios.post("http://placement-backend-production.up.railway.app/api/admin/companies", form, {
+      await axios.post("https://placement-backend-production.up.railway.app/api/admin/companies", form, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

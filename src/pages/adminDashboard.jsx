@@ -14,7 +14,7 @@ function AdminDashboard() {
     }
 
     axios
-      .get("http://placement-backend-production.up.railway.app/api/admin/profile", {
+      .get("https://placement-backend-production.up.railway.app/api/admin/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAdmin(res.data))

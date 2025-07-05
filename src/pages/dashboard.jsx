@@ -15,7 +15,7 @@ function Dashboard() {
     }
 
     axios
-      .get("http://placement-backend-production.up.railway.app/api/students/profile", {
+      .get("https://placement-backend-production.up.railway.app/api/students/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
