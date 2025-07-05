@@ -20,10 +20,10 @@ function Profile() {
 
     const fetchProfile = async () => {
       try {
-        const decoded = JSON.parse(atob(token.split(".")[1])); // Decode JWT to get student ID
-        const response = await axios.get(`http://placement-backend-production.up.railway.app/api/students/profile`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "http://placement-backend-production.up.railway.app/api/students/profile",
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
         setStudent(response.data);
         setResumeLink(response.data.resume_link || "");
         setCgpa(response.data.cgpa || "");
@@ -44,9 +44,8 @@ function Profile() {
 
     try {
       const token = localStorage.getItem("token");
-      const decoded = JSON.parse(atob(token.split(".")[1]));
       await axios.put(
-        `http://placement-backend-production.up.railway.app/api/students/${decoded.id}`,
+        "http://placement-backend-production.up.railway.app/api/students/profile",
         { resume_link: resumeLink, cgpa },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -58,7 +57,10 @@ function Profile() {
     }
   };
 
-  if (!student) return <div className="min-h-screen flex justify-center items-center">Loading...</div>;
+  if (!student)
+    return (
+      <div className="min-h-screen flex justify-center items-center">Loading...</div>
+    );
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gray-100 p-4">
@@ -66,9 +68,15 @@ function Profile() {
         <h1 className="text-2xl font-bold text-center">Student Profile</h1>
 
         <div className="space-y-1 text-gray-700">
-          <p><strong>Name:</strong> {student.name}</p>
-          <p><strong>Email:</strong> {student.email}</p>
-          <p><strong>Branch:</strong> {student.branch}</p>
+          <p>
+            <strong>Name:</strong> {student.name}
+          </p>
+          <p>
+            <strong>Email:</strong> {student.email}
+          </p>
+          <p>
+            <strong>Branch:</strong> {student.branch}
+          </p>
         </div>
 
         <form onSubmit={handleUpdate} className="space-y-3">

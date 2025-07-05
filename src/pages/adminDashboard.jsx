@@ -4,7 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 function AdminDashboard() {
   const [admin, setAdmin] = useState(null);
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,10 +62,8 @@ function AdminDashboard() {
             </div>
           </>
         ) : (
-          !error && <p>Loading...</p>
+          <p>Loading...</p>
         )}
-
-        {error && <p className="text-red-500">{error}</p>}
       </div>
     </div>
   );
