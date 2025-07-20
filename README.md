@@ -36,4 +36,4 @@ Axios for API calls
 React Router DOM for routing
 
  Backend Repository
-👉 Visit Backend Repo
+👉 https://github.com/parthdhat/placement-backend
